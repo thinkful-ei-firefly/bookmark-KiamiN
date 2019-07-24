@@ -1,5 +1,7 @@
 'use strict';
 
+/* listeners */
+
 const main = function() {
   bookmarkPage.bindEventListeners();
   api

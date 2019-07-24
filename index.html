@@ -6,33 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bookmark App</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel=stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel=stylesheet>
   <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
   <link href="styles/index.css" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-  <header>
+  <header class="header" role="banner">
     <h1>Bookmark App</h1>
   </header>
-  <main>
-    <form id="input-bookmark">
-      <fieldset>
-        <legend>Add a Bookmark</legend>
-        <div class="form-input">
-          <label for="title">Title: </label>
-          <input type="text" name="title" id="title" class="title-block" placeholder="Bookmark List">
-        </div>
-        <label for="input-url">URL: </label>
-        <input type="url" name="url" id="input-url" class="url" placeholder="https://www.example.com/">
-        <label for="add-description">Description: </label>
-        <input type="text" name="description" id="description" class="input-description"
-          placeholder="Here are some great sources">
-        <label for="rating-label">Rating: </label>
-        <input type="number" name="rating" id="rating" class="rating">
-        <button type="submit">Add Item</button>
-      </fieldset>
-    </form>
+  <main class="content-container">
+    <div class="error alert"></div>
+    <div class="form-container">
+      <div class="input-group">
+        <label for="filter">Filter Bookmarks by Minimum Rating</label>
+        <select id="filter" name="filter">
+          <option value="">Show All</option>
+          <option value="2"> 2 stars</option>
+          <option value="3"> 3 stars</option>
+          <option value="4"> 4 stars</option>
+          <option value="5"> 5 stars</option>
+        </select>
+      </div>
+
+      <button class="button" aria-live="polite">Add Bookmark</button>
+      <div class="form-holder"></div>
+    </div>
+    <div class="bookmark-list-title">
+      <h2></h2>
+    </div>
+    <ul aria-live="polite" class="bookmarkList" ></ul>
+  </main>
     <ul class="bookmarks-listed"></ul>
   </main>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"></script>
