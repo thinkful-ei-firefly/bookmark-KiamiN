@@ -3,7 +3,7 @@
 const api = (function() {
   const BASE_URL = 'https://thinkful-list-api.herokuapp.com/kiami';
 
-  const listApiFetch = function(...args) {
+  const apiFetch = function(...args) {
     let error;
     return fetch(...args)
       .then(res => {
@@ -26,11 +26,11 @@ const api = (function() {
   };
 
   const getBookmarks = function() {
-    return listApiFetch(BASE_URL + '/bookmarks');
+    return apiFetch(BASE_URL + '/bookmarks');
   };
 
   const createBookmark = function(newBookmark) {
-    return listApiFetch(BASE_URL + '/bookmarks', {
+    return apiFetch(BASE_URL + '/bookmarks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ const api = (function() {
   };
 
   const updateBookmark = function(id, updateData) {
-    return listApiFetch(BASE_URL + '/bookmarks/' + id, {
+    return apiFetch(BASE_URL + '/bookmarks/' + id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const api = (function() {
   };
 
   const deleteBookmark = function(id) {
-    return listApiFetch(BASE_URL + '/bookmarks/' + id, {
+    return apiFetch(BASE_URL + '/bookmarks/' + id, {
       method: 'DELETE'
     });
   };

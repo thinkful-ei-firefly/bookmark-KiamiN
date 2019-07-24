@@ -96,16 +96,17 @@ h1 {
   
   li {
     margin-top: 10px;
+    margin-bottom: 5px;
     }
   
   form,
   li {
-    background-color: ;
+    background-color:whitesmoke;
   }
   
   form button,
   li button {
-    margin-top: 20px;
+    margin-top: 15px;
   }
   
   .li-flex {
@@ -116,13 +117,13 @@ h1 {
   
   .bookmark-title {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
   }
   
   .bookmark-url {
     display: block;
-    text-align: center;
     margin: 20px;
+    text-align: center;
   }
   
   
