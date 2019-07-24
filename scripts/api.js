@@ -1,7 +1,7 @@
 'use strict';
 
 const api = (function() {
-  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/kiamin';
+  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/kiami';
 
   const listApiFetch = function(...args) {
     let error;

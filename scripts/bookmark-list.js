@@ -280,7 +280,7 @@ const bookmarkList = (function() {
   }
 
   return {
-    render,
-    bindEventListeners
+    render: render,
+    bindEventListeners: bindEventListeners,
   };
 })();
