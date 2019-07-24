@@ -4,8 +4,17 @@
 
 body {
 font-family: 'Merriweather', serif;
-max-width: 50px;
-min-width: 30px;
+width: 50px;
+margin: 0 auto;
+font-size: 30px;
+color: grey;
+}
+
+header {
+    color: black;
+    font-style: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 button {
