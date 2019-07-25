@@ -131,14 +131,14 @@ const bookmarkList = (function() {
     $('.js-bookmark-list').html(bookmarksString);
   }
 
-  function handleAddNewBookmarkClick() {
+  function addNewBookmark() {
     $('.add-new').on('click', '.add-new-button', () => {
       store.adding = true;
       render();
     });
   }
 
-  function handleCancelNewClick() {
+  function addFormCancelClick() {
     $('.add-form').on('click', '.cancel', () => {
       $('.add-form').toggleClass('padding');
       store.adding = false;
@@ -146,7 +146,7 @@ const bookmarkList = (function() {
     });
   }
 
-  function handleCancelEditClick() {
+  function editCancelClick() {
     $('ul').on('click', '.cancel', () => {
       const id = getBookmarkIdFromElement(event.target);
       store.setBookmarkIsEditing(id, false);
@@ -170,7 +170,7 @@ const bookmarkList = (function() {
     return obj;
   }
 
-  function handleNewBookmarkSubmit() {
+  function newSubmitBookmark() {
     $('.add-form').submit(event => {
       event.preventDefault();
       $('.add-form').toggleClass('padding');
@@ -196,7 +196,7 @@ const bookmarkList = (function() {
       .data('bookmark-id');
   }
 
-  function handleBookmarkDetailClick() {
+  function bookmarkDetails() {
     $('ul').on('click', '.bookmark-toggle', event => {
       const id = getBookmarkIdFromElement(event.currentTarget);
       const bookmark = store.findById(id);
@@ -205,7 +205,7 @@ const bookmarkList = (function() {
     });
   }
 
-  function handleRemoveBookmarkClick() {
+  function removeBookmark() {
     $('ul').on('click', '.bookmark-delete', event => {
       const id = getBookmarkIdFromElement(event.currentTarget);
       api
@@ -222,7 +222,7 @@ const bookmarkList = (function() {
     });
   }
 
-  function handleFilterByRating() {
+  function filterByRating() {
     $('#filter').change(() => {
       const rating = $(event.currentTarget).val();
       store.filterRating = rating;
@@ -230,7 +230,7 @@ const bookmarkList = (function() {
     });
   }
 
-  function handleBookmarkStartEditing() {
+  function startEditingBookmark() {
     $('ul').on('click', '.bookmark-edit', event => {
       const id = getBookmarkIdFromElement(event.target);
       store.setBookmarkIsEditing(id, true);
@@ -238,7 +238,7 @@ const bookmarkList = (function() {
     });
   }
 
-  function handleEditBookmarkSubmit() {
+  function editSubmitBookmark() {
     $('ul').on('submit', '.edit', event => {
       event.preventDefault();
       const id = getBookmarkIdFromElement(event.currentTarget);
@@ -259,7 +259,7 @@ const bookmarkList = (function() {
     });
   }
 
-  function handleCloseError() {
+  function closeError() {
     $('.error-container').on('click', '#cancel-error', () => {
       store.setError(null);
       renderError();
@@ -267,16 +267,15 @@ const bookmarkList = (function() {
   }
 
   function bindEventListeners() {
-    handleAddNewBookmarkClick();
-    handleNewBookmarkSubmit();
-    handleBookmarkDetailClick();
-    handleRemoveBookmarkClick();
-    handleFilterByRating();
-    handleBookmarkStartEditing();
-    handleEditBookmarkSubmit();
-    handleCancelNewClick();
-    handleCancelEditClick();
-    handleCloseError();
+    addNewBookmark();
+    editCancelClick();
+    addFormCancelClick();
+    newSubmitBookmark();
+    bookmarkDetails();
+    removeBookmark();
+    filterByRating();
+    startEditingBookmark();
+    editSubmitBookmark();
   }
 
   return {
